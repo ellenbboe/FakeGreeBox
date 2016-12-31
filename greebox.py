@@ -26,12 +26,12 @@ def commit(date):
 			commit_count -= 1
 
 if __name__ == "__main__":
-        begin = datetime.date(2017,1,1)
-        end = datetime.date(2017,2,1)
-        d = begin
-        delta = datetime.timedelta(days=1)
-        while d <= end:
-                date = d.strftime("%Y%m%d")
-                commit(date)
-                d += delta
+	begin = datetime.date(2017,1,1)
+	end = datetime.date(2017,2,1)
+	d = begin
+	delta = datetime.timedelta(days=1)
+	while d <= end:
+		date = d.strftime("%Y%m%d")
+		commit(date)
+		d += delta
 
