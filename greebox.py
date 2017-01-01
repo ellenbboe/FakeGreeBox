@@ -16,15 +16,14 @@ def transformation(date) -> datetime.date:
   return datetime.timedelta(hours=randint(0, 24), minutes=randint(0, 60), seconds=randint(0, 60))
 
 def commit(date):
-  while True:
-    commit_date = date
-    commit_count = randint(1,5)
-    while commit_count > 0:
-      date = datetime.datetime.strptime(commit_date, '%Y%m%d')
-      date += transformation(date)
-      write_log(date)
-      commit_github(date)
-      commit_count -= 1
+	while True:
+		commit_count = randint(1,5)
+		while commit_count > 0:
+			date = datetime.datetime.strptime(date, '%Y%m%d')
+			date += transformation(date)
+			write_log(date)
+			commit_github(date)
+			commit_count -= 1
 
 if __name__ == "__main__":
         begin = datetime.date(2017,1,1)
@@ -32,7 +31,7 @@ if __name__ == "__main__":
         d = begin
         delta = datetime.timedelta(days=1)
         while d <= end:
-                date = d.strftime("%Y%m%d")+""
+                date = d.strftime("%Y%m%d")
                 commit(date)
                 d += delta
 
