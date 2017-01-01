@@ -18,17 +18,7 @@ def transformation(date) -> datetime.date:
 def commit(date):
   while True:
     commit_date = date
-
-    if commit_date == '' or len(commit_date) != 8:
-      print('\033[31mUnknown date, please enter the correct format !!')
-      exit(1)
-
     commit_count = randint(1,5)
-
-    if commit_count <= 0:
-      print('\033[31mPlease enter number and it greater than zero !!')
-      exit(1)
-
     while commit_count > 0:
       date = datetime.datetime.strptime(commit_date, '%Y%m%d')
       date += transformation(date)
@@ -42,7 +32,7 @@ if __name__ == "__main__":
         d = begin
         delta = datetime.timedelta(days=1)
         while d <= end:
-                date = d.strftime("%Y%m%d")
+                date = d.strftime("%Y%m%d")+""
                 commit(date)
                 d += delta
 
