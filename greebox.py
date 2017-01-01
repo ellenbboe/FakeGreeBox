@@ -19,7 +19,7 @@ def commit(date):
 	while True:
 		commit_count = randint(1,5)
 		while commit_count > 0:
-			date = datetime.datetime.strptime(date, '%Y%m%d')
+			date = datetime.datetime.strptime(str(date), '%Y%m%d')
 			date += transformation(date)
 			write_log(date)
 			commit_github(date)
