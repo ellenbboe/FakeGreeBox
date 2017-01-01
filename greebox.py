@@ -15,11 +15,11 @@ def commit_github(date):
 def transformation(date) -> datetime.date:
   return datetime.timedelta(hours=randint(0, 24), minutes=randint(0, 60), seconds=randint(0, 60))
 
-def commit(date):
+def commit(a):
 	while True:
 		commit_count = randint(1,5)
 		while commit_count > 0:
-			date = datetime.datetime.strptime(date, '%Y%m%d')
+			date = datetime.datetime.strptime(a, '%Y%m%d')
 			date += transformation(date)
 			write_log(date)
 			commit_github(date)
