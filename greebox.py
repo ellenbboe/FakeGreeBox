@@ -25,8 +25,8 @@ def commit(a):
 		commit_count -= 1
 
 if __name__ == "__main__":
-	begin = datetime.date(2017,1,1)
-	end = datetime.date(2017,2,1)
+	begin = datetime.date(2017,2,1)
+	end = datetime.date(2020,6,24)
 	d = begin
 	delta = datetime.timedelta(days=1)
 	while d <= end:
